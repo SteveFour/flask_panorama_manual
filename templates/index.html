@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flask SIFT Panorama</title>
+    <style>
+        body { font-family: sans-serif; text-align: center; padding: 20px; background: #f4f4f4; }
+        .container { background: white; padding: 20px; border-radius: 8px; max-width: 900px; margin: 0 auto; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
+        input[type="file"] { margin: 20px 0; }
+        button { background: #007bff; color: white; border: none; padding: 10px 20px; cursor: pointer; border-radius: 4px; font-size: 16px; }
+        button:hover { background: #0056b3; }
+        
+        /* Image grids */
+        .image-row { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; margin-top: 20px; }
+        .input-thumb { width: 150px; height: 100px; object-fit: cover; border: 1px solid #ddd; border-radius: 4px; }
+        .result-img { max-width: 100%; margin-top: 20px; border: 2px solid #333; }
+        
+        h3 { margin-top: 30px; color: #444; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>SIFT Panorama Stitcher</h1>
+        <p>Upload 2 or 3 overlapping images</p>
+        
+        <form action="/" method="post" enctype="multipart/form-data">
+            <input type="file" name="images" multiple accept="image/*" required>
+            <br>
+            <button type="submit">Create Panorama</button>
+        </form>
+
+        <!-- Display Input Images -->
+        {% if input_images %}
+            <h3>Input Images</h3>
+            <div class="image-row">
+                {% for img in input_images %}
+                    <img src="{{ url_for('static', filename='uploads/' + img) }}" class="input-thumb">
+                {% endfor %}
+            </div>
+        {% endif %}
+
+        <!-- Display Result -->
+        {% if result %}
+            <h3>Final Panorama</h3>
+            <img src="{{ url_for('static', filename='results/' + result) }}" class="result-img" alt="Panorama">
+            <br><br>
+            <a href="{{ url_for('static', filename='results/' + result) }}" download>
+                <button>Download High-Res</button>
+            </a>
+        {% endif %}
+    </div>
+</body>
+</html>
