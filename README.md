@@ -1,4 +1,4 @@
-<img width="118" height="25" alt="image" src="https://github.com/user-attachments/assets/01c23166-0a28-436f-ba0f-578325d7ed23" /># Panorama Stitcher
+# Panorama Stitcher
 
 Một ứng dụng ghép ảnh nhẹ, chạy trên nền tảng web, được hỗ trợ bởi Python và Flask mà không dùng OpenCV. 
 
