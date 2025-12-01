@@ -1,8 +1,14 @@
-# Panorama Stitcher
+<img width="118" height="25" alt="image" src="https://github.com/user-attachments/assets/01c23166-0a28-436f-ba0f-578325d7ed23" /># Panorama Stitcher
 
 Một ứng dụng ghép ảnh nhẹ, chạy trên nền tảng web, được hỗ trợ bởi Python và Flask mà không dùng OpenCV. 
 
 Công cụ này chấp nhận nhiều ảnh chồng chéo (theo thứ tự ngẫu nhiên), tạo ảnh toàn cảnh liền mạch bằng cách sử dụng tính năng khớp SIFT + Homography để ghép ảnh.
+
+# Thành viên nhóm:
+| Mã sinh viên  | Họ tên |
+| ------------- | -------------    |
+| B22DCCN349    | Trần Minh Hoàng  |
+| B22DCCN913    | Lê Anh Vũ        |
 
 # Yêu cầu:
 - Ngôn ngữ: Python 3.x
